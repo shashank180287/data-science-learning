@@ -1,0 +1,46 @@
+2018-10-23 10:48:25,761 - __main__ - INFO - Started execution.
+2018-10-23 10:48:26,515 - __main__ - INFO - Execution terminated
+2018-10-23 10:50:23,469 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:50:24,149 - __main__ - INFO - Execution terminated of transform_data().
+2018-10-23 10:51:23,893 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:51:24,561 - __main__ - INFO - Execution terminated of transform_data()
+2018-10-23 10:51:50,386 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:52:15,745 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:52:16,440 - __main__ - INFO - Execution terminated of transform_data()
+2018-10-23 10:55:23,040 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:55:34,949 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:55:51,748 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:56:17,969 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:56:42,135 - __main__ - INFO - Started execution of transform_data().
+2018-10-23 10:56:42,529 - __main__ - ERROR - Error in transform_data() : 'AIRLIN'
+Traceback (most recent call last):
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'AIRLIN'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/catazzar/Code/mip-python/src/logexception/exceptionhandler.py", line 51, in handle_exception
+    result = func(*args, **kwargs)
+  File "/Users/catazzar/Code/mip-python/src/datamanipulation/airline_manipulation.py", line 34, in transform_data
+    data_aa = data[data['AIRLIN'] == 'AA']
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "/Users/catazzar/Code/mip-python/venv/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'AIRLIN'
